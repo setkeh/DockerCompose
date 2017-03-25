@@ -1,0 +1,15 @@
+[Unit]
+Description=Microsoft SQL Server Linux Edition
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill MSSQL
+ExecStartPre=-/usr/bin/docker rm MSSQL
+ExecStartPre=/usr/bin/docker pull microsoft/mssql-server-linux
+ExecStart=/usr/bin/docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1433:1433 -d microsoft/mssql-server-linux
+ExecStop=/usr/bin/docker stop MSSQL
+
+[X-Fleet]
+Conflicts=MSSQL@*.service
