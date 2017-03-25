@@ -4,7 +4,7 @@ BindsTo=mysql@%i.service
 After=mysql@%i.service
 
 [Service]
-ExecStart=/bin/sh -c "while true; do etcdctl set /services/database/mysql@%i '{ \"host\": \"%H\", \"port\": 1433, \"version\": \"52c7248a14\" }' --ttl 60;sleep 45;done"
+ExecStart=/bin/sh -c "while true; do etcdctl --endpoints $ETCDCTL_ENDPOINTS set /services/database/mysql@%i '{ \"host\": \"%H\", \"port\": 3306, \"version\": \"52c7248a14\" }' --ttl 60;sleep 45;done"
 ExecStop=/usr/bin/etcdctl rm /services/database/mysql@%i
 
 [X-Fleet]
