@@ -1,0 +1,15 @@
+[Unit]
+Description=Percona Galera Cluster Server
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill percona@%i.
+ExecStartPre=-/usr/bin/docker rm percona@%i.
+ExecStartPre=/usr/bin/docker pull percona
+ExecStart=/usr/bin/docker run --detach --name Percona@%i. -e DEBUG=1 -e MYSQL_USER=admin -e MYSQL_PASS=notthispassword -e REP_PASS=woopdedoo -e HOST=$HOST -e SERVICE_DISCOVERY=$ETCD_DISCOVERY -p 10.176.230.11:3306:3306 -p 10.176.230.11:4444:4444 -p 10.176.230.11:4567:4567 -p 10.176.230.11:4568:4568 paulczar/percona-galera
+ExecStop=/usr/bin/docker stop percona@%i.
+
+[X-Fleet]
+Conflicts=percona@*.service
