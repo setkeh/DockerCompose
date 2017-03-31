@@ -23,9 +23,9 @@ function GetHostIp {
 # This Set the Environment file for CoreOS in /etc/environment
 function SetEnvironment {
   # Overwrite The Current Environment File.
-  mv ServiceConfigs/environment /etc/environment
+  cp -f ServiceConfigs/environment /etc/environment
 
-  sed -e "s/\${ip}/$ip/" /etc/environment
+  sudo sed -e "s/\${ip}/$ip/" /etc/environment
 }
 
 # Time to actually do all the things
