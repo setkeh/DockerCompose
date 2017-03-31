@@ -25,7 +25,7 @@ function SetEnvironment {
   # Overwrite The Current Environment File.
   cp -f ServiceConfigs/environment /etc/environment
 
-  sudo sed -e "s/\${ip}/$ip/" /etc/environment
+  sudo sed -e 's/\${ip}/$ip/g' /etc/environment
 }
 
 # Time to actually do all the things
