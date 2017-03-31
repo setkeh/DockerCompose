@@ -1,0 +1,4 @@
+export ETCDCTL_ENDPOINTS="http://${ip}:2379,http://${ip}:4001"
+export ETCD_DISCOVERY="http://${ip}:2379" 
+export HOST="http://${ip}"
+export ETCD_HOST=${ip}:2379
