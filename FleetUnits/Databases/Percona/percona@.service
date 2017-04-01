@@ -5,11 +5,11 @@ Requires=docker.service
 
 [Service]
 TimeoutStartSec=0
-ExecStartPre=-/usr/bin/docker kill percona%i.
-ExecStartPre=-/usr/bin/docker rm percona%i.
+ExecStartPre=-/usr/bin/docker kill percona%i
+ExecStartPre=-/usr/bin/docker rm percona%i
 ExecStartPre=/usr/bin/docker pull percona
 ExecStart=/usr/bin/docker run -d --name percona%i -p 3306 -e MYSQL_ROOT_PASSWORD=Str0ngP4ssW0rd! -e DISCOVERY_SERVICE=$ETCD_HOST -e CLUSTER_NAME=$CLUSTER_NAME -e XTRABACKUP_PASSWORD=Str0ngP4ssW0rd! percona/percona-xtradb-cluster
-ExecStop=/usr/bin/docker stop percona%i.
+ExecStop=/usr/bin/docker stop percona%i
 
 [X-Fleet]
 Conflicts=percona@*.service
