@@ -1,4 +1,8 @@
+# ETCD Exports And Applications that Rely on ETCD
 export ETCDCTL_ENDPOINTS="http://0.0.0.0:2379,http://0.0.0.0:4001"
 export ETCD_DISCOVERY="http://0.0.0.0:2379" 
 export HOST="http://0.0.0.0"
 export ETCD_HOST=0.0.0.0:2379
+
+#Export for the Percona Cluster Name
+export CLUSTER_NAME=ProductionDBCluster

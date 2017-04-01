@@ -27,5 +27,12 @@ function SetEnvironment {
 }
 
 # Time to actually do all the things
+echo "Mapping Host Ip's"
 GetHostIp
+echo "Host IP's Mapped"
+echo ""
+echo "Setting the Environment"
 SetEnvironment
+echo "Environment Set You Must Log out and Log back in for the Changes to take Effect"
+echo ""
+echo "Done Exiting"
