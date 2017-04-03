@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: nfs
+  name: PerconaStorageClaim
 spec:
   capacity:
     storage: 200Gi
@@ -9,5 +9,5 @@ spec:
     - ReadWriteMany
   nfs:
     # FIXME: use the right IP
-    server: 10.244.1.4
-path: "/exports"
+    server: 10.99.0.10
+path: "/nfs-shares/PerconaCluster"
