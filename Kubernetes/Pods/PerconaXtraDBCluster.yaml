@@ -24,11 +24,11 @@ spec:
  - name: MYSQL_ROOT_PASSWORD
  value: "Theistareyk"
  - name: DISCOVERY_SERVICE
- value: "10.99.0.10:2379"
+   value: "10.99.0.10:2379"
  - name: CLUSTER_NAME
- value: "k8scluster2"
+   value: "k8scluster2"
  - name: XTRABACKUP_PASSWORD
- value: "Theistare"
+   value: "Theistare"
  volumeMounts:
  - name: mysql-persistent-storage
  mountPath: /var/lib/mysql

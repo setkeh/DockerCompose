@@ -24,10 +24,10 @@ spec:
  - name: MYSQL_ROOT_PASSWORD
  value: "Theistareyk"
  - name: DISCOVERY_SERVICE
- value: "10.99.0.10:2379"
+   value: "10.99.0.10:2379"
  - name: CLUSTER_NAME
- value: "k8scluster2"
+   value: "k8scluster2"
  - name: MYSQL_PROXY_USER
- value: "proxyuser"
+   value: "proxyuser"
  - name: MYSQL_PROXY_PASSWORD
- value: "s3cret"
+   value: "s3cret"
