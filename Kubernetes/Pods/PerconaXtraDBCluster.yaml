@@ -30,9 +30,9 @@ spec:
  - name: XTRABACKUP_PASSWORD
    value: "Theistare"
  volumeMounts:
- - name: mysql-persistent-storage
+ - name: PerconaStorageClaim
  mountPath: /var/lib/mysql
  volumes:
- - name: mysql-persistent-storage
+ - name: PerconaStorageClaim
  emptyDir: {}
  imagePullPolicy: Always
