@@ -1,0 +1,10 @@
+# Localhost Routes.
+127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4
+127.0.0.1 guest
+127.0.0.1 Merlara
+
+# Host Routes for Kubernetes
+10.99.0.10 Merlara
+10.99.0.11 Elenaril
+10.99.0.12 Lyra
+10.99.0.13 Shyilia

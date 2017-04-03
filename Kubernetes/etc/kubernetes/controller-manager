@@ -1,0 +1,5 @@
+# Comma separated list of minions
+KUBELET_ADDRESSES="--machines=Elenaril, Lyra, Shyilia"
+
+# Add you own!
+KUBE_CONTROLLER_MANAGER_ARGS=""
