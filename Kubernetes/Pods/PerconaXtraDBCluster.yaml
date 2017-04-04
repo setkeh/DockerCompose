@@ -1,38 +1,38 @@
+--- 
 apiVersion: extensions/v1beta1
 kind: Deployment
-metadata:
- name: pxc-rc
- app: pxc-app
-spec:
- replicas: 3 # tells deployment to run N pods matching the template
- selector:
- app: pxc-app
- template: # create pods using pod definition in this template
- metadata:
- name: pxc
- labels:
- app: pxc-app
- spec:
- containers:
- - name: percona-xtradb-cluster
- image: perconalab/percona-xtradb-cluster:5.6test
- ports:
- - containerPort: 3306
- - containerPort: 4567
- - containerPort: 4568
- env:
- - name: MYSQL_ROOT_PASSWORD
-   value: "Theistareyk"
- - name: DISCOVERY_SERVICE
-   value: "10.99.0.10:2379"
- - name: CLUSTER_NAME
-   value: "k8scluster2"
- - name: XTRABACKUP_PASSWORD
-   value: "Theistare"
- volumeMounts:
- - name: perconastorageclaim
- mountPath: /var/lib/mysql
- volumes:
- - name: perconastorageclaim
-   persistentVolumeClaim:
-    claimName: perconastorageclaim
+metadata: 
+  app: pxc-app
+  name: pxc-rc
+spec: 
+  app: pxc-app
+  containers: 
+    - name: percona-xtradb-cluster
+  env: 
+    - name: MYSQL_ROOT_PASSWORD
+      value: Theistareyk
+    - name: DISCOVERY_SERVICE
+      value: "10.99.0.10:2379"
+    - name: CLUSTER_NAME
+      value: k8scluster2
+    - name: XTRABACKUP_PASSWORD
+      value: Theistare
+  image: "perconalab/percona-xtradb-cluster"
+  labels: 
+  metadata: 
+  mountPath: /var/lib/mysql
+  name: pxc
+  ports: 
+    - containerPort: 3306
+    - containerPort: 4567
+    - containerPort: 4568
+  replicas: 3
+  selector: 
+  spec: 
+  template: 
+  volumeMounts: 
+    - name: perconastorageclaim
+  volumes: 
+    - name: perconastorageclaim
+      persistentVolumeClaim: 
+        claimName: perconastorageclaim
