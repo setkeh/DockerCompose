@@ -1,38 +1,34 @@
 --- 
 apiVersion: extensions/v1beta1
 kind: Deployment
-metadata: 
-  app: pxc-app
-  name: pxc-rc
-spec: 
-  app: pxc-app
-  containers: 
-    - name: percona-xtradb-cluster
-  env: 
-    - name: MYSQL_ROOT_PASSWORD
-      value: Theistareyk
-    - name: DISCOVERY_SERVICE
-      value: "10.99.0.10:2379"
-    - name: CLUSTER_NAME
-      value: k8scluster2
-    - name: XTRABACKUP_PASSWORD
-      value: Theistare
-  image: "perconalab/percona-xtradb-cluster"
-  labels: 
-  metadata: 
-  mountPath: /var/lib/mysql
-  name: pxc
-  ports: 
-    - containerPort: 3306
-    - containerPort: 4567
-    - containerPort: 4568
+metadata:
+  name: percona-xtradb-cluster
+spec:
   replicas: 3
-  selector: 
-  spec: 
-  template: 
-  volumeMounts: 
-    - name: perconastorageclaim
-  volumes: 
-    - name: perconastorageclaim
-      persistentVolumeClaim: 
+  template:
+    metadata:
+      labels:
+        app: percona-xtradb-cluster
+    spec:
+      containers: 
+      - name: percona-xtradb-cluster
+      env: 
+      - name: MYSQL_ROOT_PASSWORD
+        value: Theistareyk
+      - name: DISCOVERY_SERVICE
+        value: "10.99.0.10:2379"
+      - name: CLUSTER_NAME
+        value: k8scluster2
+      - name: XTRABACKUP_PASSWORD
+        value: Theistare
+      image: "perconalab/percona-xtradb-cluster"
+      ports: 
+      - containerPort: 3306
+      - containerPort: 4567
+      - containerPort: 4568
+      volumeMounts: 
+      - name: perconastorageclaim
+      volumes: 
+      - name: perconastorageclaim
+        persistentVolumeClaim: 
         claimName: perconastorageclaim
