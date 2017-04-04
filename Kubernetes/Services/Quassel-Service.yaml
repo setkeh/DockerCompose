@@ -8,7 +8,7 @@ spec:
     # the port that this service should serve on
     - port: 4242
       protocol: TCP
-      nodePort: 4242
+      targetPort: 4242
   # label keys and values that must match in order to receive traffic for this service
   selector:
     name: quassel-core
