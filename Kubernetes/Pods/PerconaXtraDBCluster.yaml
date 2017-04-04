@@ -21,13 +21,14 @@ spec:
           value: k8scluster2
         - name: XTRABACKUP_PASSWORD
           value: Theistare
-          image: "perconalab/percona-xtradb-cluster"
+        image: "perconalab/percona-xtradb-cluster"
         ports: 
         - containerPort: 3306
         - containerPort: 4567
         - containerPort: 4568
         volumeMounts: 
         - name: perconastorageclaim
+          mountPath: /var/lib/mysql
         volumes: 
         - name: perconastorageclaim
           persistentVolumeClaim: 
