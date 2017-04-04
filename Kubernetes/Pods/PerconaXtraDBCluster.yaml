@@ -18,7 +18,7 @@ spec:
         - name: DISCOVERY_SERVICE
           value: "10.99.0.10:2379"
         - name: CLUSTER_NAME
-        value: k8scluster2
+          value: k8scluster2
         - name: XTRABACKUP_PASSWORD
           value: Theistare
           image: "perconalab/percona-xtradb-cluster"
