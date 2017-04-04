@@ -29,7 +29,7 @@ spec:
         volumeMounts: 
         - name: perconastorageclaim
           mountPath: /var/lib/mysql
-          volumes: 
-          - name: perconastorageclaim
-            persistentVolumeClaim: 
-            claimName: perconastorageclaim
+        volumes: 
+        - name: perconastorageclaim
+          persistentVolumeClaim: 
+          claimName: perconastorageclaim
