@@ -1,0 +1,54 @@
+{
+  "kind": "Deployment",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "Percona-xtradb-deployment"
+  },
+  "spec": {
+    "containers": [
+      {
+        "name": "percona-xtradb-cluster",
+        "image": "perconalab/percona-xtradb-cluster",
+        "ports": [
+          {
+            "containerPort": 3306,
+            "containerPort": 4567,
+            "containerPort": 4568
+          }
+        ],
+        "env": [
+          {
+            "name": "MYSQL_ROOT_PASSWORD",
+            "value": "Theistareyk"
+          },
+          {
+            "name": "DISCOVERY_SERVICE",
+            "value": "10.99.0.10:2379"
+          },
+          {
+            "name": "CLUSTER_NAME",
+            "value": "PerconaClusterPri"
+          },
+          {
+            "name": "XTRABACKUP_PASSWORD",
+            "value": "Theistare"
+          }
+        ],
+        "volumeMounts": [
+          {
+            "name": "perconastorageclaim",
+            "mountPath": "/var/lib/mysql"
+          }
+        ]
+      }
+    ],
+    "volumes": [
+      {
+        "name": "perconastorageclaim",
+        "persistentVolumeClaim": {
+          "claimName": "mysql-pv-claim"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: quassel-core
+spec:
+  containers:
+  - name: quassel-core
+    image: linuxserver/quassel-core
+    ports:
+    - containerPort: 4242
+    volumeMounts:
+    - name: quasselstorage
+      mountPath: /config
+  volumes:
+  - name: quasselstorage
+    persistentVolumeClaim:
+      claimName: quasselstorage
