@@ -7,7 +7,7 @@ spec:
  # the port that this service should serve on
  - port: 3306
    targetPort: 3306
- name: "mysql"
+   name: "mysql"
  - port: 6032
    targetPort: 6032
    name: "proxyadm"
