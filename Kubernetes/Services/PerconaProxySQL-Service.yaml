@@ -1,9 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
- name: pxc-service
- labels:
- app: pxc-app
+ name: percona-xtradb-cluster
 spec:
  ports:
  # the port that this service should serve on
