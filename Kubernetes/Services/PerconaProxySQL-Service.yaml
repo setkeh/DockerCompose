@@ -13,4 +13,4 @@ spec:
    name: "proxyadm"
  # label keys and values that must match in order to receive traffic for this service
  selector:
- front: proxysql
+   front: proxysql
