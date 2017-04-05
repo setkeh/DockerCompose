@@ -1,5 +1,5 @@
 --- 
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1beta1 #extensions/v1beta1
 kind: StatefulSet #Deployment
 metadata:
   name: percona-xtradb-cluster
