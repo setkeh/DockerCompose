@@ -4,6 +4,7 @@ kind: StatefulSet #Deployment
 metadata:
   name: percona-xtradb-cluster
 spec:
+  serviceName: "percona-xtradb-cluster"
   replicas: 3
   template:
     metadata:
