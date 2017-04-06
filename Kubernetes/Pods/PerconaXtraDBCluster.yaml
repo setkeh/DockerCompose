@@ -37,11 +37,11 @@ spec:
          #  claimName: perconastorageclaim
   volumeClaimTemplates:
   - metadata:
-      name: perconastorageclaim
+      name: perconastorage
       annotations:
-        volume.alpha.kubernetes.io/storage-class: "perconastorageclaim"
+        volume.alpha.kubernetes.io/storage-class: "gceclass"
     spec:
       accessModes: ["ReadWriteOnce"]
       resources:
         requests:
-          storage: 200Gi
+          storage: 10Gi
