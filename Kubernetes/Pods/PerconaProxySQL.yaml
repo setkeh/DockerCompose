@@ -19,7 +19,7 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: "Theistareyk"
         - name: DISCOVERY_SERVICE
-          value: "10.99.0.10:2379"
+          value: "10.87.248.12:2379"
         - name: CLUSTER_NAME
           value: "k8scluster2"
         - name: MYSQL_PROXY_USER
@@ -30,4 +30,3 @@ spec:
         ports:
         - containerPort: 3306
         - containerPort: 6032
-    

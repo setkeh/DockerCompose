@@ -1,0 +1,29 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "proxysqlpublic"
+    },
+    "spec": {
+        "selector": {
+            "front": "proxysql"
+        },
+        "ports": [
+            {
+                "protocol": "TCP",
+                "port": 3306,
+                "targetPort": 3306,
+                "nodePort": 30336,
+                "name": "mysql"
+            },
+            {
+                "protocol": "TCP",
+                "port": 6032,
+                "targetPort": 6032,
+                "nodePort": 32632,
+                "name": "proxyadm"
+            }
+        ],
+        "type": "NodePort"
+    }
+}

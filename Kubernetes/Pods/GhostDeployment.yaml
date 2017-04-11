@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: setkeh-com-ghost
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: ghost
+    spec:
+      containers:
+      - name: ghost
+        image: ghost:alpine
+        env: 
+        - name: NODE_ENV
+          value: production
+        ports:
+        - containerPort: 2368
+        volumeMounts:
+        - name: ghoststorage
+          mountPath: /var/lib/ghost
+      volumes:
+      - name: ghoststorage
+        persistentVolumeClaim:
+          claimName: ghoststorage
