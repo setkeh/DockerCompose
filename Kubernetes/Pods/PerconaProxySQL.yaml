@@ -26,7 +26,7 @@ spec:
           value: "proxyuser"
         - name: MYSQL_PROXY_PASSWORD
           value: "s3cret"
-        image: perconalab/proxysql
+        image: setkeh/proxysql-docker
         ports:
         - containerPort: 3306
         - containerPort: 6032
