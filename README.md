@@ -34,3 +34,4 @@ Borrowed/Shamlessly stolen Compose and Docker files:
 ====
 
 [bvis/docker-prometheus-swarm](https://github.com/bvis/docker-prometheus-swarm)
+Huge Shoutout to [bvis](https://github.com/bvis) Most of the Monitoring Containers are Modified versions of his work.
