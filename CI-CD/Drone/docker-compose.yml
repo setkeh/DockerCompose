@@ -11,7 +11,7 @@ services:
     restart: on-failure
     environment:
       - DRONE_OPEN=true
-      - DRONE_HOST=http://drone.home.setkeh.com:8000
+      - DRONE_HOST=http://drone.setkeh.com:8000
       - DRONE_ADMIN=setkeh
       - DRONE_GITHUB=true
       - DRONE_ORGS=thesetkehproject
