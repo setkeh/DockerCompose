@@ -4,7 +4,7 @@ services:
   drone-server:
     image: drone/drone:latest
     ports:
-      - 80:8000
+      - 8000:8000
       - 9000:9000
     volumes:
       - /storage/Drone:/var/lib/drone/
