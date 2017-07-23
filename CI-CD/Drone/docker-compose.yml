@@ -6,7 +6,7 @@ services:
     ports:
       - 80:8000
     volumes:
-      - /home/nfsroot/Drone:/var/lib/drone/
+      - /storage/Drone:/var/lib/drone/
     restart: on-failure
     environment:
       - DRONE_OPEN=true
