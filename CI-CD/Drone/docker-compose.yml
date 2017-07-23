@@ -20,7 +20,7 @@ services:
       - DRONE_SECRET=DroneSecret
 
   drone-agent:
-    image: drone/drone:latest
+    image: drone/agent:latest
     command: agent
     restart: on-failure
     depends_on: [ drone-server ]
