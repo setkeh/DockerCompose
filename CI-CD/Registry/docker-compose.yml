@@ -10,7 +10,7 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - /Storage/registry-images/:/var/lib/registry
+      - /storage/registry-images/:/var/lib/registry
     environment:
       - SEARCH_BACKEND=sqlalchemy
 
