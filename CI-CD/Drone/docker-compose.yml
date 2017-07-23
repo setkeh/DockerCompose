@@ -9,8 +9,9 @@ services:
       - /home/nfsroot/Drone:/var/lib/drone/
     restart: on-failure
     environment:
-      - DRONE_HOST=http://drone.home.setkeh.com
       - DRONE_OPEN=true
+      - DRONE_HOST=http://drone.home.setkeh.com:8000
+      - DRONE_ADMIN=setkeh
       - DRONE_GITHUB=true
       - DRONE_ORGS=thesetkehproject
       - DRONE_GITHUB_CLIENT=7b8beee5905c49422d76
