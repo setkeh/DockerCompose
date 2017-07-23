@@ -15,6 +15,7 @@ services:
       - DRONE_GITHUB_CLIENT=7b8beee5905c49422d76
       - DRONE_GITHUB_SECRET=dba140c8832c63f843e4f661b7db01043c24200a
       - DRONE_SECRET=DroneSecret
+      - DRONE_HOST=http://drone.home.setkeh.com
 
   drone-agent:
     image: drone/drone:latest
