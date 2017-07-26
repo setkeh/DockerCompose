@@ -14,7 +14,7 @@ services:
       - /etc/letsencrypt/live/registry.setkeh.com/:/certs
     environment:
       - SEARCH_BACKEND=sqlalchemy
-      - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/fullchain.pem
+      - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/cert.pem
       - REGISTRY_HTTP_TLS_KEY=/certs/privkey.pem
 
   registry-ui:
@@ -30,5 +30,5 @@ services:
     links:
       - registry-server:registry-server
     environment:
-      - REGISTRY_URL=http://registry-server:5000/v2
+      - REGISTRY_URL=https://registry-server:5000/v2
       - REGISTRY_NAME=registry.setkeh.com:5000
