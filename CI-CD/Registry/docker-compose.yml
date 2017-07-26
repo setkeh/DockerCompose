@@ -11,7 +11,7 @@ services:
       - 5000:5000
     volumes:
       - /storage/registry-images/:/var/lib/registry
-      - /etc/letsencrypt/live/registry.setkeh.com:/certs
+      - /etc/letsencrypt/live/registry.setkeh.com/:/certs
     environment:
       - SEARCH_BACKEND=sqlalchemy
       - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/fullchain.pem
