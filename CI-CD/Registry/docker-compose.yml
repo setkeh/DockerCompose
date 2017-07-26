@@ -11,11 +11,11 @@ services:
       - 5000:5000
     volumes:
       - /storage/registry-images/:/var/lib/registry
-      - /etc/letsencrypt/live/registry.setkeh.com/:/certs/
+      - /etc/letsencrypt/live/registry.setkeh.com/:/tmp/
     environment:
       - SEARCH_BACKEND=sqlalchemy
-      - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/cert.pem
-      - REGISTRY_HTTP_TLS_KEY=/certs/privkey.pem
+      - REGISTRY_HTTP_TLS_CERTIFICATE=/tmp/cert.pem
+      - REGISTRY_HTTP_TLS_KEY=/tmp/privkey.pem
 
   registry-ui:
     image: hyper/docker-registry-web:latest
