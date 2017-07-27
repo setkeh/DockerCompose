@@ -33,3 +33,4 @@ services:
       - REGISTRY_URL=https://registry-server:5000/v2
       - REGISTRY_NAME=registry.setkeh.com:5000
       - REGISTRY_TRUST_ANY_SSL=true
+      - REGISTRY_AUTH_ENABLED=false
