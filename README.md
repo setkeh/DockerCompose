@@ -1,4 +1,4 @@
-# DockerFiles
+# DockerCompose
 My Dockerfiles and Docker-Compose Configuration
 
 Currently im utilizing Docker Swarm and Drone.IO for CI/CD and container orchestration.
